@@ -4,7 +4,7 @@ public class Expertise {
 
     private String name;
 
-    private Level level;
+    private String level;
 
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class Expertise {
         this.name = name;
     }
 
-    public Level getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(Level level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 }

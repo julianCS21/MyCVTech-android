@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import mycvtech.main.network.model.Expertise;
-import mycvtech.main.network.model.Level;
 import mycvtech.main.R;
 
 public class ExpertiseAdapter extends RecyclerView.Adapter<ExpertiseAdapter.ExpertiseViewHolder> {
@@ -34,10 +33,10 @@ public class ExpertiseAdapter extends RecyclerView.Adapter<ExpertiseAdapter.Expe
         Expertise expertise = expertiseList.get(position);
         holder.nameTextView.setText(expertise.getName());
 
-        // Puedes manejar el nivel según sea necesario
-        Level level = expertise.getLevel();
+
+        String level = expertise.getLevel();
         if (level != null) {
-            holder.levelTextView.setText(level.toString());
+            holder.levelTextView.setText(level);
         } else {
             holder.levelTextView.setText("N/A");
         }

@@ -59,7 +59,7 @@ public class FragmentLogin extends Fragment {
     }
 
     private void logIn(String email, String password) {
-        AuthService authService = RetrofitClient.getRetrofitInstance(token).create(AuthService.class);
+        AuthService authService = RetrofitClient.getRetrofitInstance().create(AuthService.class);
         AuthenticationRequest user = new AuthenticationRequest(email, password);
         Call<AuthenticationResponse> call = authService.logIn(user);
 

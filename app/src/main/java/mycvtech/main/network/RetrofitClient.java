@@ -1,5 +1,7 @@
 package mycvtech.main.network;
 
+import android.util.Log;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import retrofit2.Retrofit;
@@ -10,19 +12,9 @@ public class RetrofitClient {
     private static final String BASE_URL = "https://mycvtech.up.railway.app/v1/";
 
 
-    public static Retrofit getRetrofitInstance(String authToken) {
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        if (authToken != null && !authToken.isEmpty()) {
-            httpClient.addInterceptor(chain -> {
-                Request original = chain.request();
-                Request.Builder requestBuilder = original.newBuilder()
-                        .header("Authorization", "Bearer " + authToken)
-                        .method(original.method(), original.body());
-                Request request = requestBuilder.build();
-                return chain.proceed(request);
-            });
-        }
+    public static Retrofit getRetrofitInstance() {
 
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)

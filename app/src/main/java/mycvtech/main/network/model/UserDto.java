@@ -1,19 +1,104 @@
 package mycvtech.main.network.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 import java.util.List;
 
 public class UserDto {
 
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
+
+    private String createdAt;
+    private String rol;
     private String academicProgram;
     private String semester;
     private String interestedArea;
     private List<Skill> softSkills;
     private List<Expertise> expertise;
+    private boolean enabled;
+    private List<Rol> authorities;
+    private String username;
+    private boolean accountNonExpired;
+    private boolean accountNonLocked;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<Rol> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Rol> authorities) {
+        this.authorities = authorities;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public boolean isAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+    public void setAccountNonExpired(boolean accountNonExpired) {
+        this.accountNonExpired = accountNonExpired;
+    }
+
+    public boolean isAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+    public void setAccountNonLocked(boolean accountNonLocked) {
+        this.accountNonLocked = accountNonLocked;
+    }
+
+    public boolean isCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
+    }
+
+    private boolean credentialsNonExpired;
 
     public String getFirstName() {
         return firstName;
